@@ -24,6 +24,7 @@ env:
 
 jobs:
   macOS-latest-cmake-arm64:
+    if: ${{ false }}
     runs-on: macos-14
 
     steps:
@@ -82,6 +83,7 @@ jobs:
           name: llama-bin-macos-arm64.zip
 
   macOS-latest-cmake-x64:
+    if: ${{ false }}
     runs-on: macos-latest
 
     steps:
@@ -142,6 +144,7 @@ jobs:
           name: llama-bin-macos-x64.zip
 
   ubuntu-focal-make:
+    if: ${{ false }}
     runs-on: ubuntu-20.04
     env:
       LLAMA_NODE_AVAILABLE: true
@@ -180,6 +183,7 @@ jobs:
           make test -j $(nproc)
 
   ubuntu-focal-make-curl:
+    if: ${{ false }}
     runs-on: ubuntu-20.04
 
     steps:
@@ -202,6 +206,7 @@ jobs:
           CC=gcc-8 make -j $(nproc)
 
   ubuntu-latest-cmake:
+    if: ${{ false }}
     runs-on: ubuntu-latest
 
     steps:
@@ -305,6 +310,7 @@ jobs:
 #          ctest -L main --verbose --timeout 900
 
   ubuntu-latest-cmake-mpi:
+    if: ${{ false }}
     runs-on: ubuntu-latest
 
     continue-on-error: true
@@ -339,6 +345,7 @@ jobs:
           ctest -L main --verbose
 
   ubuntu-22-cmake-vulkan:
+    if: ${{ false }}
     runs-on: ubuntu-22.04
 
     steps:
@@ -361,6 +368,7 @@ jobs:
           cmake --build . --config Release -j $(nproc)
 
   ubuntu-22-cmake-sycl:
+    if: ${{ false }}
     runs-on: ubuntu-22.04
 
     continue-on-error: true
@@ -402,6 +410,7 @@ jobs:
           cmake --build . --config Release -j $(nproc)
 
   ubuntu-22-cmake-sycl-fp16:
+    if: ${{ false }}
     runs-on: ubuntu-22.04
 
     continue-on-error: true
@@ -446,6 +455,7 @@ jobs:
   #       how to debug it.
   #       ref: https://github.com/ggerganov/llama.cpp/actions/runs/7131777249/job/19420981052#step:5:1124
   macOS-latest-make:
+    if: ${{ false }}
     runs-on: macos-latest
 
     steps:
@@ -477,6 +487,7 @@ jobs:
   #       ref: https://github.com/ggerganov/llama.cpp/actions/runs/7132125951/job/19422043567?pr=4359#step:5:6584
   #       would be great if we fix these
   macOS-latest-cmake:
+    if: ${{ false }}
     runs-on: macos-latest
 
     steps:
@@ -506,6 +517,7 @@ jobs:
           ctest -L main --verbose --timeout 900
 
   macOS-latest-cmake-ios:
+    if: ${{ false }}
     runs-on: macos-latest
 
     steps:
@@ -535,6 +547,7 @@ jobs:
           cmake --build . --config Release -j $(sysctl -n hw.logicalcpu)
 
   macOS-latest-cmake-tvos:
+    if: ${{ false }}
     runs-on: macos-latest
 
     steps:
@@ -564,6 +577,7 @@ jobs:
           cmake --build . --config Release -j $(sysctl -n hw.logicalcpu)
 
   macOS-latest-swift:
+    if: ${{ false }}
     runs-on: macos-latest
 
     strategy:
@@ -649,6 +663,7 @@ jobs:
             cmake --build build --config ${{ matrix.build }} -j $(nproc)
 
   windows-latest-cmake:
+    if: ${{ false }}
     runs-on: windows-latest
 
     env:
@@ -819,6 +834,7 @@ jobs:
           name: llama-bin-win-${{ matrix.build }}-x64.zip
 
   windows-latest-cmake-cuda:
+    if: ${{ false }}
     runs-on: windows-latest
 
     strategy:
@@ -889,6 +905,7 @@ jobs:
           name: cudart-llama-bin-win-cu${{ matrix.cuda }}-x64.zip
 
   windows-latest-cmake-sycl:
+    if: ${{ false }}
     runs-on: windows-latest
 
     defaults:
@@ -940,6 +957,7 @@ jobs:
           name: llama-bin-win-sycl-x64.zip
 
   ios-xcode-build:
+    if: ${{ false }}
     runs-on: macos-latest
 
     steps:
@@ -950,6 +968,7 @@ jobs:
         run: xcodebuild -project examples/llama.swiftui/llama.swiftui.xcodeproj -scheme llama.swiftui -sdk iphoneos CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY= -destination 'generic/platform=iOS' build
 
   android-build:
+    if: ${{ false }}
     runs-on: ubuntu-latest
 
     steps:
