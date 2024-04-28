@@ -8,8 +8,6 @@ on:
         required: true
         type: boolean
   push:
-    branches:
-      - master
     paths: ['.github/workflows/**', '**/CMakeLists.txt', '**/Makefile', '**/*.h', '**/*.hpp', '**/*.c', '**/*.cpp', '**/*.cu', '**/*.swift', '**/*.m']
   pull_request:
     types: [opened, synchronize, reopened]
